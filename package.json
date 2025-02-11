@@ -1,0 +1,20 @@
+{
+  "name": "savings-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "gateway",
+    "savings-service"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:gateway && npm run install:service",
+    "install:gateway": "cd gateway && npm install",
+    "install:service": "cd savings-service && npm install",
+    "start:gateway": "cd gateway && npm run start",
+    "start:service": "cd savings-service && npm run start",
+    "dev": "concurrently \"npm run start:gateway\" \"npm run start:service\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
